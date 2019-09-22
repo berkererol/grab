@@ -1,0 +1,32 @@
+#logo {
+    width: 64px;
+    height: 95.78px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+.logowrap {
+  font-family: "Ropa Sans", sans-serif;
+  display: flex;
+  align-items: center;
+}
+.logowrap span{
+    text-transform: uppercase;
+    font-size: 24px;
+    color:#CC253D;
+}
+nav button {
+  font-size: 16px;
+  color: #fff;
+  width: 150px;
+  height: 50px;
+  left: 980px;
+  top: 51px;
+  cursor: pointer;
+  background: #eb5757;
+  border-radius: 25px;
+}
