@@ -1,0 +1,76 @@
+DROP TABLE IF EXISTS users CASCADE;
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  phone_number INTEGER NOT NULL,
+  created_at TIMESTAMP,
+  updated_at TIMESTAMP
+);
+
+DROP TABLE IF EXISTS food_categories CASCADE;
+CREATE TABLE food_categories (
+  id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(255) NOT NULL
+);
+
+DROP TABLE IF EXISTS restaurants CASCADE;
+CREATE TABLE restaurants (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  name VARCHAR(255) NOT NULL,
+  description TEXT,
+  country VARCHAR(255) NOT NULL,
+  state VARCHAR(255) NOT NULL,
+  city VARCHAR(255) NOT NULL,
+  street VARCHAR(255) NOT NULL,
+  postal_code VARCHAR(255) NOT NULL,
+  phone_number INTEGER NOT NULL,
+  photo_url VARCHAR(255) NOT NULL,
+  active BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+
+DROP TABLE IF EXISTS placed_orders CASCADE;
+CREATE TABLE placed_orders (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE,
+  comments TEXT,
+  price_before_tax INTEGER NOT NULL DEFAULT 0,
+  tax INTEGER NOT NULL DEFAULT 0,
+  final_price INTEGER NOT NULL DEFAULT 0,
+  created_at TIMESTAMP,
+  food_ready BOOLEAN NOT NULL DEFAULT FALSE,
+  sms_sent BOOLEAN NOT NULL DEFAULT FALSE
+);
+
+DROP TABLE IF EXISTS menu_items CASCADE;
+CREATE TABLE menu_items (
+  id SERIAL PRIMARY KEY NOT NULL,
+  restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE,
+  food_category_id INTEGER REFERENCES food_categories(id) ON DELETE CASCADE,
+  name VARCHAR(255) NOT NULL,
+  description TEXT,
+  ingredients TEXT,
+  preparation_time INTEGER  NOT NULL DEFAULT 0,
+  price INTEGER  NOT NULL DEFAULT 0,
+  active BOOLEAN NOT NULL DEFAULT TRUE,
+  photo_url VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP,
+  updated_at TIMESTAMP
+);
+
+DROP TABLE IF EXISTS carts CASCADE;
+CREATE TABLE carts (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  menu_item_id INTEGER REFERENCES menu_items(id) ON DELETE CASCADE,
+  quantity INTEGER NOT NULL DEFAULT 0,
+  comment TEXT
+);
+
+
+
+
