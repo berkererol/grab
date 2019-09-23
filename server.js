@@ -29,7 +29,8 @@ db.connect((err) => {
 app.use(morgan('dev'));
 
 app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ extended: true }));
 app.use("/styles", sass({
   src: __dirname + "/styles",
   dest: __dirname + "/public/styles",
@@ -42,11 +43,19 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
-
+const menuItems = require('./routes/menu_items');
+const foodCategories = require('./routes/food_categories');
+const carts = require('./routes/carts');
+const placedOrders = require('./routes/placed_orders')
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
+app.use('/api/menu-items', menuItems(db));
+app.use('/api/food_categories', foodCategories(db));
+app.use('/api/carts', carts(db));
+app.use('/api/orders', placedOrders(db));
+// app.use('./api/foodCategories', foodCategories(db));
 // Note: mount other resources here, using the same pattern above
 
 

@@ -10,10 +10,10 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM users`)
+    db.query(`SELECT * FROM menu_items`)
       .then(data => {
-        const users = data.rows;
-        res.json({ users });
+        const menuItems = data.rows;
+        res.json({ menuItems });
       })
       .catch(err => {
         res
@@ -21,12 +21,11 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
-
 
   //Get specific user by id
   router.get("/:id", (req, res) => {
     const id = parseInt(req.params.id);
-    db.query(`SELECT * FROM users WHERE id = $1`,[id])
+    db.query(`SELECT * FROM menu_items WHERE id = $1`,[id])
       .then(data => {
         const users = data.rows;
         res.json({ users });
@@ -37,6 +36,7 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+ 
   
   
 
