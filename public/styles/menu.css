@@ -1,0 +1,170 @@
+main {
+  display:block;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+section.restaurant-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  background-image: url('/images/green_panther.jpg');
+  background-size: 100%;
+}
+
+.food-display{
+  display: flex;
+  flex-direction: column;
+}
+
+#restaurant-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding: 3em;
+  background-color: rgba(204, 37, 61, 0.95);
+}
+
+#restaurant-name {
+  font-size: 1em;
+  font-family: 'Red Hat Display';
+  font-weight: 700;
+  margin-left: 40px;
+  margin-top: 1em;
+  color: white;
+}
+
+#restaurant-description {
+  font-size: 1em;
+  font-family: 'Red Hat Display';
+  font-weight: 400;
+  margin-left: 40px;
+  margin-top: 1em;
+  color: white;
+}
+
+#restaurant-address {
+  font-size: 0.8em;
+  font-family: 'Red Hat Display';
+  font-weight: 400;
+  margin-left: 40px;
+  margin-top: 1em;
+  color: white;
+}
+
+div .logo-div {
+  display:flex;
+  flex-direction: row;
+  justify-content: start;
+
+}
+
+
+img#logo-resto {
+  width: 100px;
+  height: 100px;
+  margin-left: 3em;
+  margin-top: 1em;
+}
+
+section#menu {
+  display: flex;
+  flex-direction: row;
+  height:500px;
+}
+
+section#menu-items {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: row;
+  background-color: red;
+  height: 500px;
+}
+
+aside#cart {
+  flex-grow: 1;
+  background-color: blue;
+  height: 500px;
+}
+
+div.order {
+  display: flex;
+  justify-content: row;
+  align-content: center;
+}
+
+.dish {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 0.5em;
+}
+
+.dish-specs{
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.dish-photo {
+  width: 250px;
+  height: 250px;
+  padding: 1em;
+  border-radius: 1em 1em 0em 0em;
+}
+
+.dish-preptime {
+  font-family: "Red Hat Display";
+  font-weight: 700;
+  color: #BDBDBD;
+}
+
+.dish-name {
+  font-family: "Red Hat Display";
+  font-weight: 700;
+  color:black;
+  margin-top: 0.5em;
+}
+
+.dish-description {
+  font-family: "Red Hat Display";
+  font-weight: 400;
+  color:black;
+  margin-top: 0.5em;
+}
+
+.dish-ingredients {
+  font-family: "Red Hat Display";
+  font-weight: 400;
+  font-size: 0.7em;
+  color:black;
+  margin-top: 0.5em;
+}
+
+.addtocart-button {
+  border-radius: 2em;
+  background-color: #CC253D;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 1em;
+  font-family: 'Red Hat Display';
+  font-weight: 700;
+  padding: 1em;
+  margin:1em;
+  cursor: pointer;
+  margin-right: 2em;
+}
+
+.box select {
+  background-color: #CC253D;
+  border-radius: 0.5em;
+  color: white;
+  padding: 1em;
+  margin: 1em;
+  width: 4em;
+  font-size: 1em;
+
+}

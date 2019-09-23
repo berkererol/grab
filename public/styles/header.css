@@ -29,36 +29,6 @@ nav {
 
 }
 
-/* #login-button {
-  font-size: 16px;
-  font-family: 'Red Hat Display';
-  font-weight: 700;
-  color: #fff;
-  width: 150px;
-  height: 50px;
-  left: 980px;
-  top: 51px;
-  cursor: pointer;
-  background: #eb5757;
-  border-radius: 25px;
-  border-color: transparent;
-} */
-
-/* #signup-button {
-  font-size: 16px;
-  font-family: 'Red Hat Display';
-  font-weight: 700;
-  color: #fff;
-  width: 150px;
-  height: 50px;
-  left: 980px;
-  top: 51px;
-  cursor: pointer;
-  background: #CC253D;
-  border-radius: 25px;
-  border-color: transparent;
-} */
-
 #login-button {
   border-radius: 2em;
   background-color: #EB5757;
