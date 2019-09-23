@@ -14,7 +14,14 @@ const morgan     = require('morgan');
 const { Pool } = require('pg');
 const dbParams = require('./lib/db.js');
 const db = new Pool(dbParams);
-db.connect();
+db.connect((err) => {
+  if (err) {
+    console.log('Error connecting to database', err);
+  } else {
+    console.log('Connected to database');
+  }
+});
+
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -58,6 +65,10 @@ app.use('/api/orders', placedOrders(db));
 app.get("/", (req, res) => {
   res.render("index");
 });
+
+app.get("/menu", (req, res) => {
+  res.render("menu");
+})
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
