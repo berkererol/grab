@@ -1,0 +1,30 @@
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background:#FD5F5F;
+  padding: 5em;
+  font-family: 'Red Hat Display';
+  font-weight: 700;
+  color:white;
+}
+
+.left-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family:
+}
+
+.right-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+
+#logo2 {
+  width: 64px;
+  height: 95.78px;
+}
+

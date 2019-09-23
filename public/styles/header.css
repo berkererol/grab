@@ -10,17 +10,29 @@ nav {
   padding: 30px;
 }
 .logowrap {
-  font-family: "Ropa Sans", sans-serif;
+  font-family: "Ropa Sans";
   display: flex;
   align-items: center;
 }
 .logowrap span{
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 1.2em;
     color:#CC253D;
+    margin-left: 1em;
+    margin-top: 1em;
 }
-nav button {
+
+.btnswrap {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+/* #login-button {
   font-size: 16px;
+  font-family: 'Red Hat Display';
+  font-weight: 700;
   color: #fff;
   width: 150px;
   height: 50px;
@@ -29,4 +41,108 @@ nav button {
   cursor: pointer;
   background: #eb5757;
   border-radius: 25px;
+  border-color: transparent;
+} */
+
+/* #signup-button {
+  font-size: 16px;
+  font-family: 'Red Hat Display';
+  font-weight: 700;
+  color: #fff;
+  width: 150px;
+  height: 50px;
+  left: 980px;
+  top: 51px;
+  cursor: pointer;
+  background: #CC253D;
+  border-radius: 25px;
+  border-color: transparent;
+} */
+
+#login-button {
+  border-radius: 2em;
+  background-color: #EB5757;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 1.2em;
+  font-family: 'Red Hat Display';
+  font-weight: 700;
+  padding: 0.5em;
+  width: 8em;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-right: 2em;
+
+}
+
+
+#login-span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#login-span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#login-button:hover #login-span {
+  padding-right: 25px;
+}
+
+#login-button:hover #login-span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+#signup-button {
+  border-radius: 2em;
+  background-color: #CC253D;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 0.5em;
+  font-size: 1.2em;
+  font-family: 'Red Hat Display';
+  font-weight: 700;
+  width: 8em;
+  transition: all 0.5s;
+  cursor: pointer;
+
+}
+
+
+
+#signup-span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#signup-span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#signup-button:hover #signup-span {
+  padding-right: 25px;
+}
+
+#signup-button:hover #signup-span:after {
+  opacity: 1;
+  right: 0;
 }
