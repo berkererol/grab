@@ -1,17 +1,38 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-      <title>Grab | Order here, pickup there</title>
 
-    <!-- Header css -->
-    <link rel="stylesheet" href="../styles/header.css" type="text/css">
+<head>
+  <title>Grab | Order here, pickup there</title>
+  <link href="https://fonts.googleapis.com/css?family=Ropa+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display:400,700&display=swap" rel="stylesheet">
 
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-  </head>
+  <!-- Landing Page css -->
+  <link rel="stylesheet" href="../styles/landing.css" type="text/css">
+  <!-- Header css -->
+  <link rel="stylesheet" href="../styles/header.css" type="text/css">
+  <!-- Footer css -->
+  <link rel="stylesheet" href="../styles/footer.css" type="text/css">
 
-  <body>
-    <% include ./partials/_header %>
-   
-  </body>
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+</head>
+
+<body>
+  <% include ./partials/_header %>
+  <main>
+    <div class="food-display">
+        <button id="login-button">
+            <span id="login-span">ORDER</span>
+          </button>
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </main>
+
+</body>
+
+<% include ./partials/_footer %>
+
 </html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Grab | Order here, pickup there</title>
+  <link href="https://fonts.googleapis.com/css?family=Ropa+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display:400,700&display=swap" rel="stylesheet">
+
+  <!-- Landing Page css -->
+  <link rel="stylesheet" href="../styles/menu.css" type="text/css">
+  <!-- Header css -->
+  <link rel="stylesheet" href="../styles/header.css" type="text/css">
+  <!-- Footer css -->
+  <link rel="stylesheet" href="../styles/footer.css" type="text/css">
+
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+</head>
+
+<body>
+  <% include ./partials/_header %>
+  <main>
+    <section class="restaurant-display">
+      <div id="restaurant-info">
+        <div class="logo-div">
+          <img id="logo-resto" src="/images/green_panther_logo.png" alt="">
+
+        </div>
+        <div class="food-display">
+          <span id="restaurant-name">La Panthère Verte</span>
+          <span id="restaurant-description">Eco-minded hub serving plant-based sandwiches<br>
+            and salads that use local ingredients whenever possible.</span>
+          <span id="restaurant-address"> 160 Rue Saint Viateur E, Montréal, QC H2T 1A8</span>
+
+        </div>
+      </div>
+    </section>
+    <section id="menu">
+      <section id="menu-items">
+        <div class="dish">
+          <div class="dish-visual">
+            <img class="dish-photo" src="/images/dish.jpg">
+          </div>
+          <div class="dish-specs">
+            <span class="dish-preptime">Preparation Time</span>
+            <span class="dish-name">Dish Name</span>
+            <span class="dish-description">Description</span>
+            <span class="dish-ingredients">Ingredients</span>
+
+          </div>
+          <div class="order">
+            <div class="box">
+              <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div>
+              <button type="button" class="addtocart-button" data-id="dataid" data-name="dataname"
+                data-price="dataprice" data-number="datanumber">Add to Cart</button>
+            </div>
+
+
+          </div>
+        </div>
+
+      </section>
+      <aside id="cart">
+        <p>berker</p>
+      </aside>
+    </section>
+
+
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </main>
+
+</body>
+
+<% include ./partials/_footer %>
+
+</html>

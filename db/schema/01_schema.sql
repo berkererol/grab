@@ -4,7 +4,7 @@ CREATE TABLE users (
   name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
-  phone_number INTEGER NOT NULL,
+  phone_number VARCHAR(32) NOT NULL,
   created_at TIMESTAMP,
   updated_at TIMESTAMP
 );
@@ -26,7 +26,7 @@ CREATE TABLE restaurants (
   city VARCHAR(255) NOT NULL,
   street VARCHAR(255) NOT NULL,
   postal_code VARCHAR(255) NOT NULL,
-  phone_number INTEGER NOT NULL,
+  phone_number VARCHAR(32) NOT NULL,
   photo_url VARCHAR(255) NOT NULL,
   active BOOLEAN NOT NULL DEFAULT TRUE
 );
