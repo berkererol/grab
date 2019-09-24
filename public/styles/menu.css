@@ -1,5 +1,5 @@
 main {
-  display:block;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -71,48 +71,56 @@ img#logo-resto {
 section#menu {
   display: flex;
   flex-direction: row;
-  height:500px;
+  background-color: #BDBDBD;
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+  /* height:500px; */
 }
 
 section#menu-items {
-  flex-grow: 2;
   display: flex;
+  width: 70%;
+  flex-wrap: wrap;
   flex-direction: row;
-  background-color: red;
-  height: 500px;
+  justify-content: space-around;
+  margin-left: 1em;
+  margin-top: 1em;
+  box-sizing: content-box;
 }
 
 aside#cart {
-  flex-grow: 1;
-  background-color: blue;
-  height: 500px;
 }
 
 div.order {
   display: flex;
-  justify-content: row;
+  padding: 1em;
+  flex-direction: row;
+  justify-content: start;
   align-content: center;
+  flex-wrap: wrap;
+  background-color: #27AE60;
+  border-radius: 0em 0em 0.5em 0.5em;
 }
 
 .dish {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  width:45%;
+  justify-content: space-evenly;
   background-color: white;
   border-radius: 0.5em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .dish-specs{
   display: flex;
   flex-direction: column;
-  padding: 1em;
+  padding:1em;
 }
 
 .dish-photo {
-  width: 250px;
-  height: 250px;
-  padding: 1em;
-  border-radius: 1em 1em 0em 0em;
+  max-width: 100%;
+  border-radius: 0.5em 0.5em 0em 0em;
 }
 
 .dish-preptime {
@@ -143,6 +151,16 @@ div.order {
   margin-top: 0.5em;
 }
 
+.dish-price {
+  font-family: "Red Hat Display";
+  font-weight: 700;
+  font-size: 1em;
+  margin-top:2em;
+  margin-right: 2em;
+  margin-left:0.5em;
+  color:black;
+}
+
 .addtocart-button {
   border-radius: 2em;
   background-color: #CC253D;
@@ -158,9 +176,11 @@ div.order {
   margin-right: 2em;
 }
 
+
 .box select {
   background-color: #CC253D;
   border-radius: 0.5em;
+  border-color: white;
   color: white;
   padding: 1em;
   margin: 1em;
