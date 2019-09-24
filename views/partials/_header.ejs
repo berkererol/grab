@@ -6,11 +6,20 @@
       </a>
       <span>Order online.<br>Grab it at store.<br>Save time.</span>
     </div>
-
-    <div class="btnswrap">
-      <button id="login-button">
-        <span id="login-span">LOGIN</span>
-      </button>
+    <div class="btnswrap"></div>
+    <% if (!user) { %>
+      <form class="btn-login" method="GET" action="/login">
+        <button type="submit" id="login-button">
+            <span id="login-span">LOGIN</span>
+          </button>
+      </form>
+      <% } else if (user) { %>
+        <form class="btn-login" method="GET" action="/logout">
+          <button type="submit" id="login-button">
+              <span id="login-span">LOGOUT</span>
+            </button>
+        </form>
+      <% } %>
       <button id="signup-button">
         <span id="signup-span">SIGN UP</span>
       </button>

@@ -2,20 +2,15 @@ $(() => {
   $.ajax({
     method: "GET",
     url: "/api/users"
-  }).done((obj) => {
-    console.log(obj.users[0].name)
-    for ( in users) {
-    console.log(user)
-      //$("<div>").text(user.name).appendTo($("test"));
-    }
-  });
+  }).done(users => { });
   
-/*   $.ajax({
-    method: "GET",
-    url: "/api/users"
-  }).done((users) => {
-    for(user of users) {
-      $("<div>").text(user.name).appendTo($("body"));
-    }
-  }); */
+
+
+  /* loginRedirect(); */
 });
+
+
+/* const loginRedirect = function() {
+  $("#login-button").click(function() {
+    window.location.href = "http://localhost:8080/menu";
+  }); */
