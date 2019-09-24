@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Grab | Order here, pickup there</title>
+  <link href="https://fonts.googleapis.com/css?family=Ropa+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display:400,700&display=swap" rel="stylesheet">
+
+  <!-- Orders Page css -->
+  <link rel="stylesheet" href="../styles/orders.css" type="text/css">
+  <!-- Header css -->
+  <link rel="stylesheet" href="../styles/header.css" type="text/css">
+  <!-- Footer css -->
+  <link rel="stylesheet" href="../styles/footer.css" type="text/css">
+
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/scripts/orders.js"></script>
+
+</head>
+
+<body>
+  <% include ./partials/_header %>
+
+  <main>
+    <section class="restaurant-display">
+      <div id="restaurant-info">
+        <div class="logo-div">
+          <img id="logo-resto" src="/images/green_panther_logo.png" alt="">
+
+        </div>
+        <div class="food-display">
+          <span id="restaurant-name">La Panthère Verte</span>
+          <span id="restaurant-description">Eco-minded hub serving plant-based sandwiches<br>
+            and salads that use local ingredients whenever possible.</span>
+          <span id="restaurant-address"> 160 Rue Saint Viateur E, Montréal, QC H2T 1A8</span>
+        </div>
+      </div>
+      <div id="restaurant-order">
+        <span id="order-info">Order Management</span>
+        <button type="button" class="button">Check for new orders</button>
+      </div>
+    </section>
+
+    <div id="order-details">
+      <table class="order-table">
+        <thead>
+          <tr>
+            <th> order # </th>
+            <th> customer name </th>
+            <th> phone </th>
+            <th> time placed </th>
+            <th> complete </th>
+          </tr>
+        </thead>
+        <tbody id="new-orders">
+          <!-- to fill from DB -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <% include ./partials/_footer %>
+</body>
+
+</html>
