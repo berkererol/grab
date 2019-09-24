@@ -8,7 +8,8 @@ const express    = require("express");
 const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
-const morgan     = require('morgan');
+const morgan = require('morgan');
+const cookieSession = require('cookie-session');
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -31,6 +32,10 @@ app.use(morgan('dev'));
 app.set("view engine", "ejs");
 // app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
+app.use(cookieSession({
+  name: 'session',
+  keys: ['e1d50c4f-538a-4682-89f4-c002f10a59c8', '2d310699-67d3-4b26-a3a4-1dbf2b67be5c'],
+}));
 app.use("/styles", sass({
   src: __dirname + "/styles",
   dest: __dirname + "/public/styles",
@@ -46,7 +51,9 @@ const widgetsRoutes = require("./routes/widgets");
 const menuItems = require('./routes/menu_items');
 const foodCategories = require('./routes/food_categories');
 const carts = require('./routes/carts');
-const placedOrders = require('./routes/placed_orders')
+const placedOrders = require('./routes/placed_orders');
+const loginRoutes = require('./routes/login');
+const logoutRoutes = require('./routes/logout');
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
@@ -55,6 +62,9 @@ app.use('/api/menu-items', menuItems(db));
 app.use('/api/food_categories', foodCategories(db));
 app.use('/api/carts', carts(db));
 app.use('/api/orders', placedOrders(db));
+app.use('/login', loginRoutes());
+app.use('/logout', logoutRoutes());
+
 // app.use('./api/foodCategories', foodCategories(db));
 // Note: mount other resources here, using the same pattern above
 
@@ -63,12 +73,18 @@ app.use('/api/orders', placedOrders(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
-  res.render("index");
+  const templateVar = {
+    user: req.session.id
+  };
+  res.render("index",templateVar);
 });
 
 app.get("/menu", (req, res) => {
-  res.render("menu");
-})
+  const templateVar = {
+    user: req.session.id
+  };
+  res.render("menu",templateVar);
+});
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
