@@ -12,9 +12,12 @@
   <link rel="stylesheet" href="../styles/header.css" type="text/css">
   <!-- Footer css -->
   <link rel="stylesheet" href="../styles/footer.css" type="text/css">
+  <!-- Cart css -->
+  <link rel="stylesheet" href="../styles/cart.css">
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
+
+  <script type="text/javascript" src="/scripts/cart.js"></script>
 </head>
 
 <body>
@@ -37,41 +40,22 @@
     </section>
     <section id="menu">
       <section id="menu-items">
-        <article class="dish">
-          <div class="dish-visual">
-            <img class="dish-photo" src="/images/dish.jpg">
-          </div>
-          <div class="dish-specs">
-            <span class="dish-preptime">Preparation Time</span>
-            <span class="dish-name">Dish Name</span>
-            <span class="dish-description">Description</span>
-            <span class="dish-ingredients">Ingredients</span>
-
-          </div>
-          <div class="order">
-            <span class="dish-price">Price</span>
-            <div class="box">
-              <select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-            <div>
-              <button type="button" class="addtocart-button" data-id="dataid" data-name="dataname"
-                data-price="dataprice" data-number="datanumber">Add to Cart</button>
-            </div>
-
-
-          </div>
-        </article>
+ 
 
       </section>
-      <aside id="cart">
-        <p></p>
-      </aside>
+      <section id="cart">
+          <aside id="cart-item-display">
+              
+          </aside>
+          <section id="total-cart-display">
+            <p>Total : $<span id="total-amount"> 0</span></p>
+            <input id="phoneNumber" name="phoneNumber" type="text" placeholder="Phone Number">
+           <textarea name="comment" id="comment" cols="30" rows="2" placeholder="Comment"></textarea>
+            <button id="placeOrder">Place Order</button>
+            <button>Reset</button>
+          </section>
+      </section>
+      
     </section>
 
 
