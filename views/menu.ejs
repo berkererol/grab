@@ -18,6 +18,26 @@
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
 
   <script type="text/javascript" src="/scripts/cart.js"></script>
+
+  <script>
+    $(document).ready((event) => {
+      // When user scrolls down 120px from the top of the document, scroll up button will appear.
+      $(document).on("scroll", function () {
+        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+          $("#scroll-up-btn").css("display", "block");
+        } else {
+          $("#scroll-up-btn").css("display", "none");
+        }
+      });
+
+      // When the scroll up button is pressed, the user is brought to the top of the document.
+      $("#scroll-up-btn").on("click", function () {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      });
+
+    });
+  </script>
 </head>
 
 <body>
@@ -40,30 +60,26 @@
     </section>
     <section id="menu">
       <section id="menu-items">
- 
+
 
       </section>
       <section id="cart">
-          <aside id="cart-item-display">
-              
-          </aside>
-          <section id="total-cart-display">
-            <p>Total : $<span id="total-amount"> 0</span></p>
-            <input id="phoneNumber" name="phoneNumber" type="text" placeholder="Phone Number">
-           <textarea name="comment" id="comment" cols="30" rows="2" placeholder="Comment"></textarea>
-            <button id="placeOrder">Place Order</button>
-            <button>Reset</button>
-          </section>
+        <aside id="cart-item-display">
+
+        </aside>
+        <section id="total-cart-display">
+          <p>Total : $<span id="total-amount"> 0</span></p>
+          <input id="phoneNumber" name="phoneNumber" type="text" placeholder="Phone Number">
+          <textarea name="comment" id="comment" cols="30" rows="2" placeholder="Comment"></textarea>
+          <button id="placeOrder">Place Order</button>
+          <button class="reset">Reset</button>
+        </section>
       </section>
-      
+
     </section>
 
+    <button id="scroll-up-btn"><img src="/images/up-button.png"></button>
 
-
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
   </main>
 
 </body>
