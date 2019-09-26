@@ -51,10 +51,10 @@ INSERT INTO menu_items (restaurant_id,food_category_id,name, description, ingred
 INSERT INTO menu_items (restaurant_id,food_category_id,name, description, ingredients,preparation_time,price,active,photo_url, created_at, updated_at) VALUES ( 1, 4, 'Smoothies','healthy and tasty','kale, apple, banana and chia seeds', 5, 7, true,  'https://i.ibb.co/dbv3LSJ/10-smoothies.jpg', now(), now());
 
 
--- INSERT INTO order_items (user_id, restaurant_id, menu_item_id, placed_order_id, quantity) VALUES (1, 1, 1, 1, 2);
--- INSERT INTO order_items (user_id, restaurant_id, menu_item_id, placed_order_id, quantity) VALUES (1, 1, 8, 1, 1);
--- INSERT INTO order_items (user_id, restaurant_id, menu_item_id, placed_order_id, quantity) VALUES (2, 1, 3, 1, 1);
--- INSERT INTO order_items (user_id, restaurant_id, menu_item_id, placed_order_id, quantity) VALUES (3, 1, 4, 1, 1);
+INSERT INTO order_items (user_id, restaurant_id, menu_item_id, placed_order_id, quantity) VALUES (1, 1, 1, 1, 2);
+INSERT INTO order_items (user_id, restaurant_id, menu_item_id, placed_order_id, quantity) VALUES (1, 1, 8, 1, 1);
+INSERT INTO order_items (user_id, restaurant_id, menu_item_id, placed_order_id, quantity) VALUES (2, 1, 3, 1, 1);
+INSERT INTO order_items (user_id, restaurant_id, menu_item_id, placed_order_id, quantity) VALUES (3, 1, 4, 1, 1);
 
 
 
