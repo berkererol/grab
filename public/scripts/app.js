@@ -14,7 +14,7 @@ const createMenuItem = function (dish) {
         .append(
           $("<span>")
             .addClass("dish-preptime")
-            .text(dish.preparation_time),
+            .text(`Preparation time : ${dish.preparation_time} min.`),
           $("<span>")
             .addClass("dish-name")
             .text(dish.name),
