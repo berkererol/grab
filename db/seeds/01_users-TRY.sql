@@ -1,6 +1,6 @@
 -- Users table seeds here (Example)
-INSERT INTO users ( name, email, password, phone_number, created_at, updated_at) VALUES ('Berker Erol', 'berkererol@gmail.com','BootcampX','778-349-3299', now(), now());
-INSERT INTO users ( name, email, password, phone_number, created_at, updated_at) VALUES ('Edgar Rojas', 'edgar.rojas@thebest.ca','qui','778-125-2216', now(), now());
+INSERT INTO users ( name, email, password, phone_number, created_at, updated_at) VALUES ('Berker Erol', 'berkererol@gmail.com','BootcampX','5145820964', now(), now());
+INSERT INTO users ( name, email, password, phone_number, created_at, updated_at) VALUES ('Edgar Rojas', 'edgar.rojas@thebest.ca','qui','5875850459', now(), now());
 INSERT INTO users ( name, email, password, phone_number, created_at, updated_at) VALUES ('Francis Bourgouin', 'petitpoulet@gmail.com','reprehenderit','604-094-6464', now(), now());
 INSERT INTO users ( name, email, password, phone_number, created_at, updated_at) VALUES ('Chantale Streeting', 'brigix@yahoo.com','necessitatibus','860-831-0563', now(), now());
 INSERT INTO users ( name, email, password, phone_number, created_at, updated_at) VALUES ('Erna Cassin', 'miguel.barrows@yahoo.com','reprehenderit','604-094-6464', now(), now());
@@ -49,12 +49,6 @@ INSERT INTO menu_items (restaurant_id,food_category_id,name, description, ingred
 INSERT INTO menu_items (restaurant_id,food_category_id,name, description, ingredients,preparation_time,price,active,photo_url, created_at, updated_at) VALUES ( 1, 4, 'Hibiscus Tamarind','perfect refresher for summer days','hibiscus, tamarind', 5, 7, true,  'https://i.ibb.co/0J6gpyW/09-hibiscus.jpg', now(), now());
 
 INSERT INTO menu_items (restaurant_id,food_category_id,name, description, ingredients,preparation_time,price,active,photo_url, created_at, updated_at) VALUES ( 1, 4, 'Smoothies','healthy and tasty','kale, apple, banana and chia seeds', 5, 7, true,  'https://i.ibb.co/dbv3LSJ/10-smoothies.jpg', now(), now());
-
-
-INSERT INTO order_items (user_id, restaurant_id, menu_item_id, placed_order_id, quantity) VALUES (1, 1, 1, 1, 2);
-INSERT INTO order_items (user_id, restaurant_id, menu_item_id, placed_order_id, quantity) VALUES (1, 1, 8, 1, 1);
-INSERT INTO order_items (user_id, restaurant_id, menu_item_id, placed_order_id, quantity) VALUES (2, 1, 3, 1, 1);
-INSERT INTO order_items (user_id, restaurant_id, menu_item_id, placed_order_id, quantity) VALUES (3, 1, 4, 1, 1);
 
 
 

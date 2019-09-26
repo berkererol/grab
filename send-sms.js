@@ -9,7 +9,7 @@ const twiloMessage = (body,to) => {
     .create({
       body: body,
       from: phoneNumber,
-      to: `+1${to}`
+      to: `${to}`
     })
     .then(message => console.log(message.sid))
     .catch(err => {
