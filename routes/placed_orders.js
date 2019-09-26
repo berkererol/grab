@@ -11,7 +11,7 @@ const router = express.Router();
 //Get all orders
 module.exports = db => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM placed_orders`)
+    db.query(`SELECT * FROM placed_orders JOIN users ON placed_orders.user_id=users.id`)
       .then(data => {
         const placedOrders = data.rows;
         res.json({ placedOrders });
