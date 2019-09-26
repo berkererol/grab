@@ -60,7 +60,6 @@ div .logo-div {
 
 }
 
-
 img#logo-resto {
   width: 100px;
   height: 100px;
@@ -71,77 +70,79 @@ img#logo-resto {
 section#menu {
   display: flex;
   flex-direction: row;
-  background-color: #BDBDBD;
-  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
-  /* height:500px; */
+  justify-content: flex-start;
   align-items: flex-start;
+  background: #FF512F;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #DD2476, #FF512F);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #DD2476, #FF512F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding-top:2em;
+  padding-right: 2em;
+  padding-left: 2em;
+  padding-bottom: 2em;
 }
+
+
+
+
 
 section#menu-items {
   display: flex;
   width: 70%;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
-  margin-left: 1em;
-  margin-top: 1em;
-  box-sizing: content-box;
+  justify-content: space-evenly;
 }
 
-aside#cart {
-}
-
-div.order {
-  display: flex;
-  padding: 1em;
-  flex-direction: row;
-  justify-content: start;
-  align-content: center;
-  flex-wrap: wrap;
-  background-color: #27AE60;
-  border-radius: 0em 0em 0.5em 0.5em;
-}
 
 .dish {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  width:45%;
-  justify-content: space-evenly;
-  background-color: white;
+  width: 30%;
+  justify-content: space-between;
+  background-color: #F2F2F2;
   border-radius: 0.5em;
   margin-top: 2em;
   margin-bottom: 2em;
 }
 
+.dish-visual {
+  display: inline-flex;
+  /* width: 300px;
+  height: 300px; */
+}
+
 .dish-specs{
   display: flex;
   flex-direction: column;
-  padding:1em;
+  padding-left:1em;
+  padding-top: 1em;
 }
 
 .dish-photo {
   max-width: 100%;
+  display: inline-flex;
   border-radius: 0.5em 0.5em 0em 0em;
 }
 
 .dish-preptime {
   font-family: "Red Hat Display";
   font-weight: 700;
-  color: #BDBDBD;
+  font-size: 0.8em;
+  color: #CC253D;
+  margin-bottom: 0.5em;
 }
 
 .dish-name {
   font-family: "Red Hat Display";
   font-weight: 700;
+  font-size:1.2em;
   color:black;
-  margin-top: 0.5em;
 }
 
 .dish-description {
   font-family: "Red Hat Display";
   font-weight: 400;
   color:black;
-  margin-top: 0.5em;
 }
 
 .dish-ingredients {
@@ -149,43 +150,85 @@ div.order {
   font-weight: 400;
   font-size: 0.7em;
   color:black;
-  margin-top: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  width: 60%;
 }
 
 .dish-price {
   font-family: "Red Hat Display";
-  font-weight: 700;
-  font-size: 1em;
-  margin-top:2em;
-  margin-right: 2em;
-  margin-left:0.5em;
+  font-weight: 400;
+  font-size: 1.2em;
   color:black;
+  margin-right:1em;
 }
 
+div.order {
+  display: flex;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: white;
+  border-radius: 0em 0em 0.5em 0.5em;
+}
+
+
 .addtocart-button {
-  border-radius: 2em;
-  background-color: #CC253D;
+  border-radius: 0.5em;
+  background-color:black;
+  border-color: white;
   border: none;
   color: #FFFFFF;
   text-align: center;
-  font-size: 1em;
+  font-size: 0.8em;
   font-family: 'Red Hat Display';
   font-weight: 700;
-  padding: 1em;
-  margin:1em;
+  padding: 0.5em;
+  margin-right: 1em;
+  /* margin:1em; */
   cursor: pointer;
-  margin-right: 2em;
+  /* margin-right: 2em; */
+}
+
+.addtocart-button:hover {
+  border-radius: 1.5em;
+  background-color: #27AE60;
+  border-color: white;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 0.8em;
+  font-family: 'Red Hat Display';
+  font-weight: 700;
+  padding: 0.5em;
+  margin-right: 1em;
+  /* margin:1em; */
+  cursor: pointer;
+  /* margin-right: 2em; */
 }
 
 
 .box select {
-  background-color: #CC253D;
+  background-color: black;
+  border-radius: 0.5em;
+  color: white;
+  width: 4em;
+  padding-top: 0.35em;
+  padding-bottom: 0.35em;
+  margin-right:2em;
+  font-size: 0.8em;
+
+}
+
+.box select:hover {
+  background-color: #27AE60;
   border-radius: 0.5em;
   border-color: white;
   color: white;
-  padding: 1em;
-  margin: 1em;
   width: 4em;
-  font-size: 1em;
+  padding-top: 0.35em;
+  padding-bottom: 0.35em;
+  font-size: 0.8em;
 
 }

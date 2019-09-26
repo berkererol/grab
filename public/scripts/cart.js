@@ -20,7 +20,7 @@ const createMenuItem = function(dish) {
         .append(
           $("<span>")
             .addClass("dish-preptime")
-            .text(dish.preparation_time),
+            .text(`${dish.preparation_time} min. preparation time`),
           $("<span>")
             .addClass("dish-name")
             .text(dish.name),
@@ -37,7 +37,7 @@ const createMenuItem = function(dish) {
           // eslint-disable-next-line no-undef
           $("<span>")
             .addClass("dish-price")
-            .text(`Price : ${dish.price} $`),
+            .text(`${dish.price} $`),
           $("<div>")
             .addClass("box")
             .append(
@@ -88,7 +88,7 @@ $(document).ready(function() {
   }).done((obj) => {
     const arrayMenuItems = obj.menuItems;
     dishes = arrayMenuItems;
-    
+
     arrayMenuItems.forEach(dish => {
       let renderMenuItem = createMenuItem(dish);
       $("#menu-items").prepend(renderMenuItem);
@@ -97,9 +97,9 @@ $(document).ready(function() {
 
 
 
-  
+
     $('.addtocart-button').click(function(event) {
-     
+
       const dishId = $(event.target).parent().parent().parent()[0].dataset.id;
       const currentClickedDish = dishes.filter((dish) => parseInt(dish.id) === parseInt(dishId))[0];
       const quatity = $(`#${parseInt(currentClickedDish.id)}`).val();
@@ -116,10 +116,10 @@ $(document).ready(function() {
       </div> `);
       lclStorage(currentClickedDish,quatity);
       getTotalCart(currentClickedDish.price, quatity);
-      
+
     });
   });
- 
+
 
 
   const getTotalCart = function(value, qty) {
@@ -127,8 +127,8 @@ $(document).ready(function() {
     cart.finalPrice = totalCartValue;
     $('#total-amount').text(totalCartValue);
   };
-  
- 
+
+
   const lclStorage = function(data,quatity) {
     cart.items.push({ id:data.id,name: data.name, quatity: quatity,restaurantID:data.restaurant_id });
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -164,9 +164,9 @@ $(document).ready(function() {
         .fail(function() {
           console.log("error");
         });
-      
+
     });
-    
+
   };
   messageSendToDB();
   $('.reset').click(clearCart);
