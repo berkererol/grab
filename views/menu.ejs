@@ -19,6 +19,8 @@
 
   <script type="text/javascript" src="/scripts/cart.js"></script>
 
+  <script type="text/javascript" src="/vendor/jquery.mask.js"></script>
+
   <script>
     $(document).ready((event) => {
       // When user scrolls down 120px from the top of the document, scroll up button will appear.
@@ -64,16 +66,17 @@
 
       </section>
       <section id="cart">
-        <aside id="cart-item-display">
+          <aside id="cart-item-display">
+              
+          </aside>
+          <section id="total-cart-display">
+            <p>Total : $<span id="total-amount"> 0</span></p>
+            <input id="phoneNumber" name="phoneNumber" type="text" placeholder="(XXX) XXX-XXXX">
+           <textarea name="comment" id="comment" cols="30" rows="2" placeholder="Comment"></textarea>
+            <button id="placeOrder">Place Order</button>
+            <button class="reset">Reset</button>
+          </section>
 
-        </aside>
-        <section id="total-cart-display">
-          <p>Total : $<span id="total-amount"> 0</span></p>
-          <input id="phoneNumber" name="phoneNumber" type="text" placeholder="Phone Number">
-          <textarea name="comment" id="comment" cols="30" rows="2" placeholder="Comment"></textarea>
-          <button id="placeOrder">Place Order</button>
-          <button class="reset">Reset</button>
-        </section>
       </section>
 
     </section>

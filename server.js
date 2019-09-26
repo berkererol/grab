@@ -56,6 +56,7 @@ const carts = require('./routes/carts');
 const placedOrders = require('./routes/placed_orders');
 const loginRoutes = require('./routes/login');
 const logoutRoutes = require('./routes/logout');
+const messageRoutes = require('./routes/message');
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
@@ -66,6 +67,7 @@ app.use('/api/carts', carts(db));
 app.use('/api/orders', placedOrders(db));
 app.use('/login', loginRoutes());
 app.use('/logout', logoutRoutes());
+app.use('/api/message', messageRoutes());
 
 // app.use('./api/foodCategories', foodCategories(db));
 // Note: mount other resources here, using the same pattern above
@@ -102,6 +104,34 @@ app.get("/orders/:id", (req, res) => {
   };
   res.render("specific_order",templateVar);
 });
+
+
+//TWILIO TEST
+const accountSid = process.env.ACCOUNT_SID;
+const authToken = process.env.AUTH_TOKEN;
+
+app.get('/testTwilio', (req, res) => {
+  console.log('test');
+  
+ 
+  const client = require('twilio')(accountSid, authToken);
+  console.log(client);
+  
+  client.messages
+    .create({
+      body: 'Your order is ready!! $345.98 for your two hamburgers!! plus TIP!!',
+      from: '#####',
+      to: '#######'
+    })
+    .then(message => console.log(message.sid))
+    .catch(err => {
+      console.log(err);
+    });
+
+
+});
+
+
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);

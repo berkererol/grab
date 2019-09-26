@@ -1,3 +1,5 @@
+/* eslint-disable func-style */
+/* eslint-disable no-undef */
 // Generate Orders Table
 // const moment = require('moment');
 // moment().format();
@@ -10,11 +12,25 @@ function generateTableRow(orderObj) {
   const $phoneNumber = $("<td>").addClass("phone_number").text(orderObj.phone_number);
   const $timePlaced = $("<td>").text(moment(orderObj.created_at).format('MM/DD, h:mm A'));
   const $button = $("<button>").addClass("button").text("Send SMS");
-
+  buttonMessage($button[0],orderObj.phone_number);
   $row.append($orderNumber, $customerName, $phoneNumber, $timePlaced, $button);
   return $row;
-};
+}
 
+const buttonMessage = (btn, phoneNumber) => {
+  $(btn).on('click', () => {
+    $.ajax({
+      method: "POST",
+      url: "/api/message",
+      data: {
+        phoneNumber: `+1${phoneNumber}`,
+        message:'Your order is ready for pickup!!'
+      }
+    }).done((data) => {
+      console.log(data);
+    });
+  });
+};
 
 // // Render the new rows in the table
 // function renderRows(orderData) {
@@ -33,6 +49,7 @@ function generateTableRow(orderObj) {
 
 
 $(() => {
+
   $.ajax({
     method: "GET",
     url: "/api/orders"

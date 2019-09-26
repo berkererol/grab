@@ -7,7 +7,7 @@
 
 const express = require("express");
 const router = express.Router();
-
+const twiloMessage = require('../send-sms');
 //Get all orders
 module.exports = db => {
   router.get("/", (req, res) => {
@@ -56,13 +56,13 @@ module.exports = db => {
             [userID, restaurantID, menuItemId, placedOrderId, menuItemQuantity]
           );
         });
-
+        twiloMessage('Thanks for your order!!',req.body.phoneNumber);
         res.json(order.rows[0].id);
       })
       .catch(err => {
         res.status(500).json({ error: err.message });
       });
-  }); 
+  });
 
   //Delete specific placed order by id
   router.delete("/delete/:id", (req, res) => {
