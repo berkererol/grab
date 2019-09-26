@@ -40,6 +40,7 @@ module.exports = db => {
     console.log(req.body);
     const userID = req.session.id;
     const restaurantID = 1;
+    console.log(userID);
     // console.log(userID, restaurantID, req.body.comment, req.body.finalPrice);
     db.query(
       `INSERT INTO placed_orders (user_id, restaurant_id, comment, final_price) VALUES ($1,$2,$3,$4) RETURNING id`,
@@ -60,6 +61,7 @@ module.exports = db => {
         res.json(order.rows[0].id);
       })
       .catch(err => {
+        console.log("HERE")
         res.status(500).json({ error: err.message });
       });
   });

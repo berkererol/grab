@@ -3,13 +3,13 @@ const accountSid = process.env.ACCOUNT_SID;
 const authToken = process.env.AUTH_TOKEN;
 const phoneNumber = process.env.PHONE_NUMBER;
 const twiloMessage = (body,to) => {
- 
+
   const client = require('twilio')(accountSid, authToken);
   return client.messages
     .create({
       body: body,
       from: phoneNumber,
-      to: `+1${to}`
+      to: `${to}`
     })
     .then(message => console.log(message.sid))
     .catch(err => {
