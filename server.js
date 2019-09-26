@@ -10,6 +10,8 @@ const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan = require('morgan');
 const cookieSession = require('cookie-session');
+const moment = require('moment');
+moment().format();
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -84,6 +86,21 @@ app.get("/menu", (req, res) => {
     user: req.session.id
   };
   res.render("menu",templateVar);
+});
+
+app.get("/orders", (req, res) => {
+  const templateVar = {
+    user: req.session.id
+  };
+  res.render("orders",templateVar);
+});
+
+app.get("/orders/:id", (req, res) => {
+  const templateVar = {
+    user: req.session.id,
+    orderId: req.params.id
+  };
+  res.render("specific_order",templateVar);
 });
 
 app.listen(PORT, () => {
