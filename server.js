@@ -95,6 +95,14 @@ app.get("/orders", (req, res) => {
   res.render("orders",templateVar);
 });
 
+app.get("/orders/:id", (req, res) => {
+  const templateVar = {
+    user: req.session.id,
+    orderId: req.params.id
+  };
+  res.render("specific_order",templateVar);
+});
+
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
 });
