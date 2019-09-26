@@ -74,6 +74,7 @@ section#menu {
   background-color: #BDBDBD;
   background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
   /* height:500px; */
+  align-items: flex-start;
 }
 
 section#menu-items {

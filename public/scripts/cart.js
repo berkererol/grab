@@ -72,9 +72,10 @@ const createMenuItem = function(dish) {
 
 
 $(document).ready(function() {
+  $('#phoneNumber').mask('(000) 000-0000'); //.cleanVal();
   let dishes;
   let totalCartValue = 0;
-  const cart = {
+  let cart = {
     items: [],
     finalPrice:0,
     comment: '',
@@ -121,7 +122,7 @@ $(document).ready(function() {
  
 
 
-  const getTotalCart = function (value, qty) {
+  const getTotalCart = function(value, qty) {
     totalCartValue += value * qty;
     cart.finalPrice = totalCartValue;
     $('#total-amount').text(totalCartValue);
@@ -134,16 +135,32 @@ $(document).ready(function() {
     console.log(cart);
   };
 
-
+  const clearCart = function() {
+    totalCartValue = 0;
+    $('#total-amount').text(0);
+    $('#cart-item-display').empty();
+    cart = {
+      items: [],
+      finalPrice: 0,
+      comment: '',
+      phoneNumber: ''
+    };
+    $('#phoneNumber').val('');
+    $('#comment').val('');
+  };
   const messageSendToDB = function() {
     $('#placeOrder').click(function() {
       cart.phoneNumber = $('#phoneNumber').val();
+      console.log($('#phoneNumber').cleanVal());
       cart.comment = $('#comment').val();
       $.ajax({
         method: "POST",
         url: "/api/orders",
         data:cart
-      }).done((obj) => { })
+      }).done((obj) => {
+        console.log('clear');
+        clearCart();
+      })
         .fail(function() {
           console.log("error");
         });
@@ -152,6 +169,6 @@ $(document).ready(function() {
     
   };
   messageSendToDB();
-
+  $('.reset').click(clearCart);
 });
 
