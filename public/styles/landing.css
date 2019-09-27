@@ -11,7 +11,7 @@ div.food-display {
   align-items: center;
   background-image: url('/images/main_page_background1.jpg');
   background-size: 100%;
-  height: 500px;
+  height: 700px;
 }
 
 .food-display span {
@@ -28,3 +28,98 @@ img#logo-resto {
 }
 
 
+#how-it-works-wrap {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-top: 7em;
+  padding-bottom: 3em;
+  padding-left: 13em;
+  padding-right: 13em;
+  background: #FF512F;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #DD2476, #FF512F);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #DD2476, #FF512F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.explanation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
+.icon-text {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Red Hat Display";
+  font-size: 1em;
+  font-weight: 700;
+  color: white;
+}
+
+#how-it-works {
+  display: flex;
+  font-family: "Red Hat Display";
+  font-size: 3em;
+  font-weight: 700;
+  justify-content: center;
+  padding-bottom: 2em;
+  color:white;
+}
+
+.icon {
+  display:flex;
+  padding-bottom: 3em;
+  justify-content: center;
+}
+
+.directions {
+  display:flex;
+  justify-content: center;
+}
+
+#marketing-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding-left: 13em;
+  padding-right: 13em;
+  padding-bottom: 10em;
+  background: #FF512F;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #DD2476, #FF512F);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #DD2476, #FF512F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.pic-text-wrap {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 7em;
+  padding-right: 5em;
+  padding-left: 5em;
+}
+
+.slogan {
+  font-family: "Red Hat Display";
+  font-weight: 700;
+  font-size: 2em;
+  margin-top: 3em;
+  margin-bottom: 2em;
+  margin-left: 3em;
+  margin-right: 3em;
+  color: white;
+}
+
+.marketing-pic {
+  border-radius: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  box-shadow: 5px -5px 5px  rgba(0,0,0,0.2);
+  -moz-box-shadow: 5px -5px 5px  rgba(0,0,0,0.2);
+  -webkit-box-shadow: 5px -5px 5px  rgba(0,0,0,0.2);
+  -o-box-shadow: 5px -5px 5px  rgba(0,0,0,0.2);
+  border-radius: 1em;
+}

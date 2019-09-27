@@ -46,7 +46,8 @@
   <script>
   function myFunction() {
     var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");}
+    popup.classList.toggle("show");
+    popup.css("position", "static");}
     </script>
 </head>
 
@@ -82,10 +83,10 @@
           <input id="phoneNumber" name="phoneNumber" type="text" placeholder="(XXX) XXX-XXXX">
           <textarea name="comment" id="comment" cols="30" rows="2" placeholder="Comment"></textarea>
           <button id="placeOrder" onclick="myFunction()">Place Order</button>
-          <button class="reset">Reset</button>
+          <button class="reset">Empty Cart</button>
         </section>
         <div class="popup">
-          <span class="popuptext" id="myPopup">Thank you for your order! You will get an SMS message when your order's ready! <br> <br>  🥑 ➡ 🥗 ➡ 🥡 ➡ ️📱 ➡ 😊 </span>
+          <span class="popuptext" id="myPopup">Thank you for your order! <br> <br> You will get an SMS message when your order's ready! <br> <br>  🥑  ➡  🥗  ➡  🥡  ➡ ️ 📱  ➡  😊 </span>
         </div>
 
       </section>
