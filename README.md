@@ -6,6 +6,7 @@ This project is a collaboration between Berker Erol and Edgar Rojas. Our web app
 
 !["Screenshot of Menu Page."](https://github.com/berkererol/grab/blob/master/docs/menu_page.gif)
 
+You can actually visit our application on https://grab-food-ordering.herokuapp.com/ .
 
 ## Statement
 GRAB facilitates food ordering experience by allowing a user to place an order online and recieve a text message when their order is ready for pick up from the restaurant. 
