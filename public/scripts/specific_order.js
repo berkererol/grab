@@ -1,8 +1,3 @@
-// Generate Orders Table
-// const moment = require('moment');
-// moment().format();
-// // moment(orderObj.created_at).format('MM/DD, h:mm A')
-
 function generateTableRow(orderObj) {
   const $row = $("<tr>").addClass("table-white");
   const $orderNumber = $("<td>").addClass("order_id").append($("<a>").text(orderObj.id).attr("href", `http://localhost:8080/api/orders/${orderObj.id}`));

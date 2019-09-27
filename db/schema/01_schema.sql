@@ -37,7 +37,7 @@ CREATE TABLE placed_orders (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE,
-  comments TEXT,
+  comment TEXT,
   price_before_tax INTEGER NOT NULL DEFAULT 0,
   tax INTEGER NOT NULL DEFAULT 0,
   final_price INTEGER NOT NULL DEFAULT 0,
@@ -62,15 +62,13 @@ CREATE TABLE menu_items (
   updated_at TIMESTAMP
 );
 
-DROP TABLE IF EXISTS carts CASCADE;
-CREATE TABLE carts (
+DROP TABLE IF EXISTS order_items CASCADE;
+CREATE TABLE order_items (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE,
   menu_item_id INTEGER REFERENCES menu_items(id) ON DELETE CASCADE,
-  quantity INTEGER NOT NULL DEFAULT 0,
-  comment TEXT
+  placed_order_id INTEGER REFERENCES placed_orders(id) ON DELETE CASCADE,
+  quantity INTEGER NOT NULL DEFAULT 0
 );
-
-
-
 

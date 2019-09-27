@@ -59,13 +59,6 @@ const createMenuItem = function (dish) {
   return $item;
 };
 
-
-// const renderMenuItems = function (items) {
-//   let renderItem = createMenuItem
-//   $("#menu-items").prepend()
-// }
-
-
 $(() => {
   $.ajax({
     method: "GET",
@@ -78,7 +71,6 @@ $(() => {
     });
 
  });
-
 
 });
 

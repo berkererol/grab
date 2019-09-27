@@ -1,10 +1,3 @@
-/*
- * All routes for Users are defined here
- * Since this file is loaded in server.js into api/users,
- *   these routes are mounted onto /users
- * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
- */
-
 const express = require("express");
 const router = express.Router();
 const twiloMessage = require('../send-sms');
@@ -33,7 +26,7 @@ module.exports = db => {
         res.status(500).json({ error: err.message });
       });
   });
-  //=======
+
 
   //Post to orders  ;
   router.post("/", (req, res) => {
@@ -41,7 +34,6 @@ module.exports = db => {
     const userID = req.session.id;
     const restaurantID = 1;
     console.log(userID);
-    // console.log(userID, restaurantID, req.body.comment, req.body.finalPrice);
     db.query(
       `INSERT INTO placed_orders (user_id, restaurant_id, comment, final_price) VALUES ($1,$2,$3,$4) RETURNING id`,
       [userID, restaurantID, req.body.comment, req.body.finalPrice]

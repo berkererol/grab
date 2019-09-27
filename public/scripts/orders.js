@@ -25,7 +25,6 @@ const buttonMessage = (btn, phoneNumber) => {
   });
 };
 
-
 $(() => {
 
   $.ajax({

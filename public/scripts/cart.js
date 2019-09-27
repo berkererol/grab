@@ -1,13 +1,10 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
-const createMenuItem = function(dish) {
+const createMenuItem = function (dish) {
   const $item = $(`<article data-id="${dish.id}" >`)
     .data('restaurant-id', dish.restaurant_id)
     .data('food-category-id', dish.food_category_id)
     .addClass("dish")
     .addClass("dish")
     .append(
-      // eslint-disable-next-line no-undef
       $("<div>")
         .addClass("dish-visual")
         .append(
@@ -34,14 +31,13 @@ const createMenuItem = function(dish) {
       $("<div>")
         .addClass("order")
         .append(
-          // eslint-disable-next-line no-undef
           $("<span>")
             .addClass("dish-price")
             .text(`${dish.price} $`),
           $("<div>")
             .addClass("box")
             .append(
-              $("<select>").addClass("menu-item-qty").attr('id',`${dish.id}`)
+              $("<select>").addClass("menu-item-qty").attr('id', `${dish.id}`)
                 .append(
                   $("<option value='1'>")
                     .text("1"),
@@ -67,19 +63,15 @@ const createMenuItem = function(dish) {
 };
 
 
-
-
-
-
-$(document).ready(function() {
-  $('#phoneNumber').mask('(000) 000-0000'); //.cleanVal();
+$(document).ready(function () {
+  $('#phoneNumber').mask('(000) 000-0000');
   let dishes;
   let totalCartValue = 0;
   let cart = {
     items: [],
-    finalPrice:0,
+    finalPrice: 0,
     comment: '',
-    phoneNumber:''
+    phoneNumber: ''
   };
 
   $.ajax({
@@ -95,10 +87,7 @@ $(document).ready(function() {
     });
 
 
-
-
-
-    $('.addtocart-button').click(function(event) {
+    $('.addtocart-button').click(function (event) {
 
       const dishId = $(event.target).parent().parent().parent()[0].dataset.id;
       const currentClickedDish = dishes.filter((dish) => parseInt(dish.id) === parseInt(dishId))[0];
@@ -114,7 +103,7 @@ $(document).ready(function() {
         </span>
       </div>
       </div> `);
-      lclStorage(currentClickedDish,quatity);
+      lclStorage(currentClickedDish, quatity);
       getTotalCart(currentClickedDish.price, quatity);
 
     });
@@ -122,20 +111,20 @@ $(document).ready(function() {
 
 
 
-  const getTotalCart = function(value, qty) {
+  const getTotalCart = function (value, qty) {
     totalCartValue += value * qty;
     cart.finalPrice = totalCartValue;
     $('#total-amount').text(totalCartValue);
   };
 
 
-  const lclStorage = function(data,quatity) {
-    cart.items.push({ id:data.id,name: data.name, quatity: quatity,restaurantID:data.restaurant_id });
+  const lclStorage = function (data, quatity) {
+    cart.items.push({ id: data.id, name: data.name, quatity: quatity, restaurantID: data.restaurant_id });
     localStorage.setItem('cart', JSON.stringify(cart));
     console.log(cart);
   };
 
-  const clearCart = function() {
+  const clearCart = function () {
     totalCartValue = 0;
     $('#total-amount').text(0);
     $('#cart-item-display').empty();
@@ -148,20 +137,20 @@ $(document).ready(function() {
     $('#phoneNumber').val('');
     $('#comment').val('');
   };
-  const messageSendToDB = function() {
-    $('#placeOrder').click(function() {
+  const messageSendToDB = function () {
+    $('#placeOrder').click(function () {
       cart.phoneNumber = $('#phoneNumber').val();
       console.log($('#phoneNumber').cleanVal());
       cart.comment = $('#comment').val();
       $.ajax({
         method: "POST",
         url: "/api/orders",
-        data:cart
+        data: cart
       }).done((obj) => {
         console.log('clear');
         clearCart();
       })
-        .fail(function() {
+        .fail(function () {
           console.log("error");
         });
 
@@ -170,5 +159,23 @@ $(document).ready(function() {
   };
   messageSendToDB();
   $('.reset').click(clearCart);
+
+  // When user scrolls down 500px from the top of the document, scroll up button will appear.
+  $(document).on("scroll", function () {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+      $("#scroll-up-btn").css("display", "block");
+    } else {
+      $("#scroll-up-btn").css("display", "none");
+    }
+  });
+
+  // When the scroll up button is pressed, the user is brought to the top of the document.
+  $("#scroll-up-btn").on("click", function () {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  });
+
 });
+
+
 
