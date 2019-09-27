@@ -106,17 +106,17 @@ app.get("/orders/:id", (req, res) => {
 });
 
 
-//TWILIO TEST
+//TWILIO SMS MESSAGE HANDLING
 const accountSid = process.env.ACCOUNT_SID;
 const authToken = process.env.AUTH_TOKEN;
 
 app.get('/testTwilio', (req, res) => {
   console.log('test');
-  
- 
+
+
   const client = require('twilio')(accountSid, authToken);
   console.log(client);
-  
+
   client.messages
     .create({
       body: 'Your order is ready!! $345.98 for your two hamburgers!! plus TIP!!',

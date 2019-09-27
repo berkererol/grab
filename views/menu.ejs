@@ -6,7 +6,7 @@
   <link href="https://fonts.googleapis.com/css?family=Ropa+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display:400,700&display=swap" rel="stylesheet">
 
-  <!-- Landing Page css -->
+  <!-- Menu Page css -->
   <link rel="stylesheet" href="../styles/menu.css" type="text/css">
   <!-- Header css -->
   <link rel="stylesheet" href="../styles/header.css" type="text/css">
@@ -14,38 +14,15 @@
   <link rel="stylesheet" href="../styles/footer.css" type="text/css">
   <!-- Cart css -->
   <link rel="stylesheet" href="../styles/cart.css">
+    <!-- Popup css -->
   <link rel="stylesheet" href="../styles/popup.css">
 
-
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-
   <script type="text/javascript" src="/scripts/cart.js"></script>
-
   <script type="text/javascript" src="/vendor/jquery.mask.js"></script>
-
   <script>
-    $(document).ready((event) => {
-      // When user scrolls down 120px from the top of the document, scroll up button will appear.
-      $(document).on("scroll", function () {
-        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-          $("#scroll-up-btn").css("display", "block");
-        } else {
-          $("#scroll-up-btn").css("display", "none");
-        }
-      });
-
-      // When the scroll up button is pressed, the user is brought to the top of the document.
-      $("#scroll-up-btn").on("click", function () {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      });
-
-    });
-
-  </script>
-  <script>
-  function myFunction() {
-    var popup = document.getElementById("myPopup");
+  function popUp() {
+    let popup = document.getElementById("myPopup");
     popup.classList.toggle("show");
     popup.css("position", "static");}
     </script>
@@ -82,7 +59,7 @@
           <p>Total : $<span id="total-amount"> 0</span></p>
           <input id="phoneNumber" name="phoneNumber" type="text" placeholder="(XXX) XXX-XXXX">
           <textarea name="comment" id="comment" cols="30" rows="2" placeholder="Comment"></textarea>
-          <button id="placeOrder" onclick="myFunction()">Place Order</button>
+          <button id="placeOrder" onclick="popUp()">Place Order</button>
           <button class="reset">Empty Cart</button>
         </section>
         <div class="popup">
