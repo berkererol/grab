@@ -70,7 +70,7 @@ img#logo-resto {
 section#menu {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   background: #FF512F;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #DD2476, #FF512F);  /* Chrome 10-25, Safari 5.1-6 */
