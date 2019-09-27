@@ -4,7 +4,7 @@ This project is a collaboration between Berker Erol and Edgar Rojas. Our web app
 
 !["Screenshot of Main Page."](https://github.com/berkererol/grab/blob/master/docs/main_page.gif)
 
-!["Screenshot of Menu Page."](https://github.com/berkererol/grab/blob/master/docs/menu_page.gif
+!["Screenshot of Menu Page."](https://github.com/berkererol/grab/blob/master/docs/menu_page.gif)
 
 
 ## Statement
